@@ -1,0 +1,352 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "io.github.shevkomore.smmatter.SMMatter",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1245635613 { 
+   	label=github
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_995404522 { 
+   	label=shevkomore
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AirStat1317567698[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AirStat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   airBuffer: Map&lt;Player, Integer&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   airUpdate: BukkitTask [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ apply(player: Player, previous_value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># calculateAirChange(y_level: int, p: Player): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DamageStat1317567698[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DamageStat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># apply(player: Player, previous_value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onHoldItem(e: PlayerItemHeldEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Offer2098602531[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Offer</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   manager: TradingManager [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   receiverChanges: Map&lt;Stat, Integer&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ get(stat: Stat): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNumberDisplayReceiver(stat: Stat, users: OfferUsers): BaseComponent[]</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNumberDisplaySender(stat: Stat, sender: PlayerData): BaseComponent[]</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getReceiverBookView(users: OfferUsers): ItemStack</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getSenderBookView(sender: PlayerData): ItemStack</TD></TR>
+<TR><TD ALIGN="LEFT" >+ giveTo(stat: Stat, player: PlayerData)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ resolve(users: OfferUsers)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ takeFrom(stat: Stat, player: PlayerData)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+OfferUsers2098602531[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)OfferUsers</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   receiver: PlayerData [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   sender: PlayerData [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PlayerData1871979033[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlayerData</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   name: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PlayerStatManager831705770[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlayerStatManager</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   playerStats: Map&lt;PlayerData, FileConfiguration&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   plugin: JavaPlugin [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statsFolder: File [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tradingManager: TradingManager [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addStat(stat: Stat)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ changePlayerStatValue(player: PlayerData, stat: Stat, change: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># generateDefaultData(player: PlayerData)</TD></TR>
+<TR><TD ALIGN="LEFT" ># getPlayerFileData(player: PlayerData): FileConfiguration</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getPlayerStatValue(stat: Stat, player: PlayerData): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getStat(id: String): Stat</TD></TR>
+<TR><TD ALIGN="LEFT" ># loadPlayerFileData(player: PlayerData)</TD></TR>
+<TR><TD ALIGN="LEFT" ># loadPlayerFileData(player: PlayerData, data: FileConfiguration)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCommand(sender: CommandSender, command: Command, s: String, args: String[]): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onPlayerJoin(e: PlayerJoinEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onPlayerLeave(e: PlayerQuitEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ terminate()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SMMatter1871979033[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SMMatter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   PlayerStatManager: PlayerStatManager [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   data: FileConfiguration [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onDisable()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onEnable()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SaturationStat1317567698[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SaturationStat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getValue(player: Player): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onSaturationDecrease(e: FoodLevelChangeEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SpeedStat1317567698[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SpeedStat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># apply(player: Player, previous_value: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Stat639321560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Stat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   manager: PlayerStatManager [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   playerValues: Map&lt;Player, Integer&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># apply(player: Player, previous_value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRawValue(player: Player): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getValue(player: Player): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ implement(player: Player, value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ removePlayer(e: PlayerQuitEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ removePlayer(p: Player)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(e: PlayerChangedWorldEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TextUIBuilder2098602531[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TextUIBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   book: ItemStack [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   currentPage: List&lt;BaseComponent&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   lastLine: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   lineCounter: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   meta: BookMeta [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ IntRoundUp(num: int, divisor: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addElement(element: BaseComponent[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ finishBook(): ItemStack</TD></TR>
+<TR><TD ALIGN="LEFT" >+ finishPage()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TradingManager2098602531[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TradingManager</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   editedOffers: Map&lt;PlayerData, Offer&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sentOffers: Map&lt;OfferUsers, Offer&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   statManager: PlayerStatManager [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># finishOffer(users: OfferUsers, offer: Offer)</TD></TR>
+<TR><TD ALIGN="LEFT" ># getOfferListBookView(player: PlayerData): ItemStack</TD></TR>
+<TR><TD ALIGN="LEFT" ># getReceiverListBookView(player: PlayerData): ItemStack</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCommand(sender: CommandSender, command: Command, s: String, args: String[]): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onPayerLeave(e: PlayerQuitEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onPlayerJoin(e: PlayerJoinEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># openEditedOfferToSender(sender: PlayerData)</TD></TR>
+<TR><TD ALIGN="LEFT" ># openSentOfferToReceiver(users: OfferUsers)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ sendOfferMessage(users: OfferUsers)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UniqueNegativeBehaviorStat639321560[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UniqueNegativeBehaviorStat</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ apply(player: Player, old_value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># applyNegative(player: Player, value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># applyPositive(player: Player, value: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># applyZero(player: Player)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+PlayerStatManager831705770 -> PlayerData1871979033[label="playerStats
+[0..*]"];
+PlayerStatManager831705770 -> TradingManager2098602531[label="tradingManager
+[0..1]"];
+SMMatter1871979033 -> PlayerStatManager831705770[label="PlayerStatManager
+[0..1]"];
+Stat639321560 -> AirStat1317567698[arrowhead=none, arrowtail=empty, dir=both];
+Stat639321560 -> DamageStat1317567698[arrowhead=none, arrowtail=empty, dir=both];
+Stat639321560 -> PlayerStatManager831705770[label="manager
+[0..1]"];
+Stat639321560 -> SaturationStat1317567698[arrowhead=none, arrowtail=empty, dir=both];
+Stat639321560 -> SpeedStat1317567698[arrowhead=none, arrowtail=empty, dir=both];
+Stat639321560 -> UniqueNegativeBehaviorStat639321560[arrowhead=none, arrowtail=empty, dir=both];
+TradingManager2098602531 -> Offer2098602531[label="editedOffers
+[0..*]"];
+TradingManager2098602531 -> Offer2098602531[label="sentOffers
+[0..*]"];
+TradingManager2098602531 -> OfferUsers2098602531[label="sentOffers
+[0..*]"];
+TradingManager2098602531 -> PlayerData1871979033[label="editedOffers
+[0..*]"];
+TradingManager2098602531 -> PlayerStatManager831705770[label="statManager
+[0..1]"];
+    
+}
+@enduml

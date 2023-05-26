@@ -1,0 +1,19 @@
+name: SMMatter
+version: 1.0.0
+main: io.github.shevkomore.smmatter.SMMatter
+api-version: 1.17
+commands:
+  offer:
+    description: Manipulate existing offers.
+    usage: /offer send <player> - sends the offer to a player. The offer will be unavailable for editing. /offer send - creates an interface for sending the offer%n/offer view - opens a list of all offers sent to you. /offer view <player> - opens the offer from chosen player, if you have one. /offer accept <player> - exchange stats with a player based on offer sent by them
+  editoffer:
+    description: Edit you current offer (You can only create one offer at a time!)
+    usage: /editoffer - opens the offer editor. /editoffer set <statID> <value> - sets how much of a stat you take/give. /editoffer change <statID> <value> - adds/subtracts the given amount from stat in offer. positive numbers - how much do you give. negative numbers - how much do you take.
+  stats:
+    description: View your current stats
+    usage: /stats
+  loadstats:
+    description: Loads stats from file
+    usage: /<command>
+    permission: io.github.shevkomore.smmatter.statfileaccess
+    permission-message: This is only applicable if you can edit stat files. If you can, get permission "io.github.shevkomore.smmatter.statfileaccess"
