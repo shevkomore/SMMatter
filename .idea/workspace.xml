@@ -4,32 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a0e6d50-82b4-432c-85aa-6cef05b07bfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/PlayerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/SMMatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/SMMatter_structure_old.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/PlayerStatManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/UIManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/trading/Offer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/trading/OfferUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/trading/TextUIBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/management/trading/TradingManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/Stat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/UniqueNegativeBehaviorStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/created/AirStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/created/DamageStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/created/HealthStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/created/SaturationStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/shevkomore/smmatter/stats/created/SpeedStat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    <list default="true" id="5a0e6d50-82b4-432c-85aa-6cef05b07bfd" name="Changes" comment="Initial (old version)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +70,14 @@
       <option name="presentableId" value="Default" />
       <updated>1673689220147</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial (old version)">
+      <created>1685115710691</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685115710691</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,5 +97,7 @@
       <path value="$PROJECT_DIR$/canvas" />
       <path value="$PROJECT_DIR$/InventoryGui" />
     </ignored-roots>
+    <MESSAGE value="Initial (old version)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial (old version)" />
   </component>
 </project>
